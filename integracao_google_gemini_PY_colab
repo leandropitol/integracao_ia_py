@@ -1,0 +1,18 @@
+import google.generativeai as genai
+from google.colab import userdata
+google_gemini_api_key = userdata.get('gemini_apikey')
+genai.configure(api_key=google_gemini_api_key)
+for m in genai.list_models():
+  if 'generateContent' in m.supported_generation_methods:
+    print(m.name)
+model = genai.GenerativeModel("gemini-1.5-pro-latest")
+response = model.generate_content("Quem criou os modelos de IA Gemini?")
+response.text
+chat = model.start_chat(history=[])
+prompt = input("Esperando prompt:")
+messages.append({"role": "user","content": prompt})
+
+while prompt != "fim":
+  response = chat.send_message(prompt)
+  print(response.text)
+  prompt = input("Esperando prompt:")
