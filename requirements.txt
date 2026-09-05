@@ -1,0 +1,9 @@
+pandas>=2.2
+numpy>=1.26
+requests>=2.31
+openpyxl>=3.1        # leitura de .xlsx (IFGF Firjan, DTB/IBGE)
+xlrd>=2.0             # leitura de .xls antigos, se necessário
+pyarrow>=15.0         # leitura/escrita parquet e CSVs grandes (RAIS)
+tqdm>=4.66            # barra de progresso em downloads e loops longos
+python-dateutil>=2.9
+unidecode>=1.3        # normalização de nomes de município para conferência cruzada
